@@ -1,21 +1,40 @@
 const URL = 'http://localhost:8080/professor';
 
 async function login() {
-    const email = document.querySelector('#emailLogin');
-    const password = document.querySelector('#passwordLogin');
+    const emailInput = document.querySelector('#emailLogin');
+    const passwordInput = document.querySelector('#passwordLogin');
 
-    fetch(`${URL}/login`, {
-        method: 'POST',
-        headers: { 
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password })
-    })
-    .then(response => response.json())
-    .then(data => {
-        data.sucess ? window.location.href = 'html/principal.html' : alert(data.message);
-    }).catch(error => {
-        alert("Erro ao fazer login");
-        console.log(error);
-    });
+    if (!(emailInput instanceof HTMLElement) || !(passwordInput instanceof HTMLElement)) {
+        alert('Erro ao fazer requisição');
+        return;
+    }
+    
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    const data = { email: email, senha: password };
+    
+    try {
+        const response = await fetch(`${URL}/login`, {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+    
+        if (response.ok) {
+            const responseData = await response.json();
+            console.log(responseData);
+            window.location.href = 'html/principal.html';
+        } else {
+            const errorText = await response.text();
+            alert("Erro: " + errorText);
+            console.error("Erro do servidor:", errorText);
+        }
+    } catch (error) {
+        alert("Erro de rede ou credenciais inválidas.");
+        console.error("Erro na requisição:", error);
+    }
+
+    
 }

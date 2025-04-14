@@ -38,7 +38,8 @@ public class ProfessorController {
 
         Optional<ProfessorEntitiy> professorOpt = ProfRep.findByEmail(email);
         if (professorOpt.isPresent() && professorOpt.get().getSenha().equals(senha)) {
-            return ResponseEntity.ok("Login bem-sucedido! Bem-vindo, " + email);
+            return ResponseEntity.ok("{\"message\": \"Login bem-sucedido! Bem-vindo, " + email + "\"}");
+
         }
 
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Email ou senha inválidos!");
