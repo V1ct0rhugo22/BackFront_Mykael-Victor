@@ -25,7 +25,7 @@ public class ProfessorController {
     @GetMapping("/get")
     public ResponseEntity<List<ProfessorEntitiy>> getProfessor() {
         List<ProfessorEntitiy> Professor = ProfRep.findAll();
-        return new ResponseEntity(Professor, HttpStatus.CREATED);
+        return new ResponseEntity(Professor, HttpStatus.OK);
     }
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody ProfessorDTO loginRequest) {
