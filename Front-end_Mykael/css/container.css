@@ -26,7 +26,7 @@
     flex-flow: row nowrap;
 }
 
-#passwordLogin, #emailLogin {
+#passwordLogin, #emailLogin, #descAtv {
     border: none;
     box-shadow: 10px 5px 10px rgb(177, 246, 255);
     width: 90%;
