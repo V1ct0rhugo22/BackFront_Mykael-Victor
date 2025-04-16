@@ -34,8 +34,8 @@ public class TurmaController {
         return new ResponseEntity(Turma, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete{numeroTurma}")
-    public ResponseEntity<Boolean> deleteTurma(@RequestParam long numeroTurma) {
+    @DeleteMapping("/delete/{numeroTurma}")
+    public ResponseEntity<Boolean> deleteTurma(@PathVariable long numeroTurma) {
         TurmaRep.deleteById(numeroTurma);
         return ResponseEntity.ok(true);
     }

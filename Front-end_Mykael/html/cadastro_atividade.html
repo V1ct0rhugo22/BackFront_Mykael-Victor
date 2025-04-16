@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Atividades</title>
+    <script src="../js/scriptCadastroAtividade.js"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="/css/container.css">
-    <link rel="stylesheet" href="/css/turma.css">
+    <link rel="stylesheet" href="../css/container.css">
 </head>
 <body>
     <section class="displayLogin">
@@ -15,8 +15,10 @@
             <div class="inputDivLogin">
                 <label for="emailLogin">Nome da Atividade:</label><br>
                 <input type="text" name="emailLogin" id="emailLogin">
+                <label for="descAtv">Descrição da Atividade:</label><br>
+                <input type="text" name="descAtv" id="descAtv">
             </div>
-            <a href="atividades.html"><input id="loginButton" type="button" value="Entrar"></a> 
+            <input id="loginButton" type="button" value="Entrar" onclick="cadastrar()">
         </form>
     </section>
 </body>
