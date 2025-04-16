@@ -44,7 +44,7 @@ public class ProfessorController {
 
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Email ou senha inválidos!");
     }
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Boolean> deleteProfessor(@PathVariable Long id) {
         ProfRep.deleteById(id);
         return ResponseEntity.ok(true);
