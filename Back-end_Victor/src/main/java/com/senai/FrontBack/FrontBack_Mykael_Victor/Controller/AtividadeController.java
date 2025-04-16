@@ -25,8 +25,8 @@ public class AtividadeController {
         List<AtividadeEntity> Atvd = AtvRep.findAll();
         return new ResponseEntity(Atvd, HttpStatus.OK);
     }
-    @DeleteMapping("delete{numeroAtividade}")
-    public ResponseEntity<Boolean> deleteAtv(@RequestParam Long numeroAtividade) {
+    @DeleteMapping("/delete/{numeroAtividade}")
+    public ResponseEntity<Boolean> deleteAtv(@PathVariable Long numeroAtividade) {
         AtvRep.deleteById(numeroAtividade);
         return ResponseEntity.ok(true);
     }
