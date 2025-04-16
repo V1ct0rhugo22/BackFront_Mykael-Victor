@@ -14,7 +14,6 @@ function getTeacher() {
 }
 
 function showName(data) {
-  console.log(data)
   const name = document.querySelector('#nomeLogin');
   if(!name instanceof HTMLTitleElement) {
     alert('h1 não instanciado');

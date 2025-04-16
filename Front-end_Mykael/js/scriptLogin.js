@@ -1,8 +1,20 @@
 const URL = 'http://localhost:8080/professor';
 
+window.onload = () => {
+    document.querySelector('#reload').addEventListener('submit', event => {event.preventDefault()});
+    const button = document.querySelector('#loginButton');
+    button ? button.addEventListener('click', login) : null;
+}
+
 async function login() {
+    const check = document.querySelector('#checkTerms');
     const emailInput = document.querySelector('#emailLogin');
     const passwordInput = document.querySelector('#passwordLogin');
+
+    if(!check.checked) {
+        alert('Por favor, aceite nossos termos de uso e privacidade!');
+        return;
+    }
 
     if (!(emailInput instanceof HTMLElement) || !(passwordInput instanceof HTMLElement)) {
         alert('Erro ao fazer requisição');

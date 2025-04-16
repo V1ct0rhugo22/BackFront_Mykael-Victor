@@ -1,5 +1,11 @@
 const URL = 'http://localhost:8080/turma';
 
+window.onload = () => {
+    document.querySelector('#reload').addEventListener('submit', event => {event.preventDefault()});
+    const cadastroTurma = document.querySelector('#loginButton');
+    cadastroTurma ? cadastroTurma.addEventListener('click', cadastrar) : null;
+}
+
 async function cadastrar() {
     const nomeInput = document.querySelector('#emailLogin');
 

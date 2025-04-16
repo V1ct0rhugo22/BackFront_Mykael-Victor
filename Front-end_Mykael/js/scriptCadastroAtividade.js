@@ -1,5 +1,11 @@
 const URL = 'http://localhost:8080/atividade';
 
+window.onload = () => {
+    document.querySelector('#reload').addEventListener('submit', event => {event.preventDefault()});
+    const cadastroAtividade = document.querySelector('#loginButton');
+    cadastroAtividade ? cadastroAtividade.addEventListener('click', cadastrar) : null;
+}
+
 async function cadastrar() {
     const nomeInput = document.querySelector('#emailLogin');
     const descricaoInput = document.querySelector('#descAtv')

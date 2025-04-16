@@ -11,7 +11,7 @@
 <body>
     <section class="displayLogin">
         <h2>Bem Vindo de Volta!</h2>
-        <form class="styleForms">
+        <form class="styleForms" id="reload">
             <div class="inputDivLogin">
                 <label for="emailLogin">email:</label><br>
                 <input type="text" name="emailLogin" id="emailLogin">
@@ -24,7 +24,7 @@
                 <input type="checkbox" name="checkTerms" id="checkTerms">
                 <p>aceito os <u>termos de uso</u> e <u>privacidade</u></p>
             </div>
-            <button onclick="login()" id="loginButton" type="button">Entrar</button>
+            <button id="loginButton" type="submit">Entrar</button>
         </form>
     </section>
 </body>

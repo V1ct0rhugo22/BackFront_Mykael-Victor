@@ -43,7 +43,7 @@ function getIdButtons() {
   const botoesVisualizar = document.querySelectorAll('.view'); //Ainda nao finalizado no relacionamento
   botoesVisualizar.forEach((botao) => {
     botao.addEventListener('click', (event) => {
-      window.location.href = '../html/atividade.html';
+      window.location.href = '../html/principal.html';
     });
   });
 
